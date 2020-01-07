@@ -1,0 +1,3 @@
+list("localdata/survival_pbcseq.fst" # smartfilechoose(batchmode = "data/example_data_pbc.csv", autoresponse = pop("confchfile"))
+,4 # smartmenu(choices = c("Select an additional file.", "Change the name of a variable.",      "Unselect one of the files.", "Save selections and continue."),      batchmode = 4, autoresponse = pop("confchfile"), title = "What do you wish to do?",      extramessage = {         ui_line("\n\nThese are the files you have chosen and the variable names to which they will\n be assigned after getting imported into R:\n")         for (ii in names(.inputdata)) {             ui_line("{ui_field(ii)}\t{ui_path(.inputdata[ii])}")         }     })
+)
